@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AxesoNegocio.Views.LoginPage"
+             xmlns:controls="clr-namespace:AxesoNegocio.Controls;assembly=AxesoNegocio"
+             
+             BackgroundColor="{StaticResource AxesoBackgroundColor}"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="controls:StandardEntry">
+                <Setter Property="Padding" Value="13" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="BorderColor" Value="#BEBEBE" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource FontColor}" />
+                <Setter Property="Margin" Value="50,0,50,0" />
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView
+            VerticalOptions="StartAndExpand">
+            <StackLayout
+            Padding="5,35,5,0">
+                <Image Source="logowhite"
+                   Aspect="AspectFit"
+                   WidthRequest="230"
+                       Margin="0,0,0,8">
+                </Image>
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                    VerticalOptions="CenterAndExpand"
+                    HeightRequest="10"/>
+                <controls:StandardEntry 
+                    Text="{Binding Email, Mode=TwoWay}" 
+                    Placeholder="Ingrese su email" 
+                    Keyboard="Email"/>
+                <controls:StandardEntry 
+                    Text="{Binding Password, Mode=TwoWay}" 
+                    Placeholder="Ingrese su contraseña"
+                    Keyboard="Text"
+                    IsPassword="True"/>
+                <Label HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
+                       Margin="0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span 
+                                Text="¿Olvidó su contraseña?"
+                                TextColor="Blue"
+                                TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding RecoverPasswordMail}" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <StackLayout
+                    Margin="50,0,50,5"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand"
+                    IsVisible="False">
+                    <Label 
+                    HorizontalOptions="StartAndExpand"
+                    Text="¡Recordarme en este dispositivo!"
+                    VerticalOptions="Center"
+                    TextColor="White"/>
+                    <Switch
+                        IsToggled="{Binding IsRemembered, Mode=TwoWay}"
+                        HorizontalOptions="End"
+                        ThumbColor="White"
+                        OnColor="Gray"></Switch>
+                </StackLayout>
+                <StackLayout
+                    Margin="50,0,50,0"
+                    Orientation="Vertical">
+                    <Button
+                        x:Name="LoginMailB"
+                        BackgroundColor="#F4F4F4"
+                        TextColor="{StaticResource FontColor}"
+                        BorderRadius="6"
+                        Text="Entrar"
+                        HeightRequest="46"
+                        Margin="0,0,0,2"
+                        Padding="8,0,45,0"
+                        Image="axeso30"  
+                        Command="{Binding LoginMailB}"/>
+                    <Label 
+                        HorizontalOptions="Center"
+                        Text="¿Aún no tienes cuenta en Axeso?"
+                        VerticalOptions="Center"
+                        TextColor="White"
+                        FontSize="12"/>
+                    <Button
+                        BackgroundColor="{StaticResource TwitterColor}"
+                        TextColor="White"
+                        BorderRadius="6"
+                        Text="Registrar"
+                        HeightRequest="46"
+                        Margin="0,0,0,2"
+                        Command="{Binding RegisterMail}"/>
+                </StackLayout>
+                <StackLayout
+                    Margin="15,20,15,0"
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="EndAndExpand">
+                    <Label 
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Entrar implica que has leido y aceptado los Términos y condiciones y Políticas de privacidad"
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    TextColor="White"
+                        FontSize="11"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
