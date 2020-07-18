@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="AxesoNegocio.Views.LoginPage"
-             xmlns:controls="clr-namespace:AxesoNegocio.Controls;assembly=AxesoNegocio"
-             
-             BackgroundColor="{StaticResource AxesoBackgroundColor}"
-             NavigationPage.HasNavigationBar="False">
+<ContentPage
+    x:Class="AxesoNegocio.Views.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:AxesoNegocio.Controls;assembly=AxesoNegocio"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="{StaticResource AxesoBackgroundColor}"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="controls:StandardEntry">
@@ -24,34 +24,33 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView
-            VerticalOptions="StartAndExpand">
-            <StackLayout
-            Padding="5,35,5,0">
-                <Image Source="logowhite"
-                   Aspect="AspectFit"
-                   WidthRequest="230"
-                       Margin="0,0,0,8">
-                </Image>
+        <ScrollView VerticalOptions="StartAndExpand">
+            <StackLayout Padding="5,35,5,0">
+                <Image
+                    Margin="0,0,0,8"
+                    Aspect="AspectFit"
+                    Source="logowhite"
+                    WidthRequest="230" />
                 <ActivityIndicator
+                    HeightRequest="10"
                     IsRunning="{Binding IsRunning, Mode=TwoWay}"
-                    VerticalOptions="CenterAndExpand"
-                    HeightRequest="10"/>
-                <controls:StandardEntry 
-                    Text="{Binding Email, Mode=TwoWay}" 
-                    Placeholder="Ingrese su email" 
-                    Keyboard="Email"/>
-                <controls:StandardEntry 
-                    Text="{Binding Password, Mode=TwoWay}" 
-                    Placeholder="Ingrese su contraseña"
+                    VerticalOptions="CenterAndExpand" />
+                <controls:StandardEntry
+                    Keyboard="Email"
+                    Placeholder="Ingrese su email"
+                    Text="{Binding Email, Mode=TwoWay}" />
+                <controls:StandardEntry
+                    IsPassword="True"
                     Keyboard="Text"
-                    IsPassword="True"/>
-                <Label HorizontalOptions="Center"
-                    VerticalOptions="CenterAndExpand"
-                       Margin="0">
+                    Placeholder="Ingrese su contraseña"
+                    Text="{Binding Password, Mode=TwoWay}" />
+                <Label
+                    Margin="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span 
+                            <Span
                                 Text="¿Olvidó su contraseña?"
                                 TextColor="Blue"
                                 TextDecorations="Underline">
@@ -64,61 +63,59 @@
                 </Label>
                 <StackLayout
                     Margin="50,0,50,5"
+                    IsVisible="False"
                     Orientation="Horizontal"
-                    VerticalOptions="CenterAndExpand"
-                    IsVisible="False">
-                    <Label 
-                    HorizontalOptions="StartAndExpand"
-                    Text="¡Recordarme en este dispositivo!"
-                    VerticalOptions="Center"
-                    TextColor="White"/>
+                    VerticalOptions="CenterAndExpand">
+                    <Label
+                        HorizontalOptions="StartAndExpand"
+                        Text="¡Recordarme en este dispositivo!"
+                        TextColor="White"
+                        VerticalOptions="Center" />
                     <Switch
-                        IsToggled="{Binding IsRemembered, Mode=TwoWay}"
                         HorizontalOptions="End"
-                        ThumbColor="White"
-                        OnColor="Gray"></Switch>
+                        IsToggled="{Binding IsRemembered, Mode=TwoWay}"
+                        OnColor="Gray"
+                        ThumbColor="White" />
                 </StackLayout>
-                <StackLayout
-                    Margin="50,0,50,0"
-                    Orientation="Vertical">
+                <StackLayout Margin="50,0,50,0" Orientation="Vertical">
                     <Button
                         x:Name="LoginMailB"
-                        BackgroundColor="#F4F4F4"
-                        TextColor="{StaticResource FontColor}"
-                        BorderRadius="6"
-                        Text="Entrar"
-                        HeightRequest="46"
                         Margin="0,0,0,2"
                         Padding="8,0,45,0"
-                        Image="axeso30"  
-                        Command="{Binding LoginMailB}"/>
-                    <Label 
+                        BackgroundColor="#F4F4F4"
+                        BorderRadius="6"
+                        Command="{Binding LoginMailB}"
+                        HeightRequest="46"
+                        Image="axeso30"
+                        Text="Entrar"
+                        TextColor="{StaticResource FontColor}" />
+                    <Label
+                        FontSize="12"
                         HorizontalOptions="Center"
                         Text="¿Aún no tienes cuenta en Axeso?"
-                        VerticalOptions="Center"
                         TextColor="White"
-                        FontSize="12"/>
+                        VerticalOptions="Center" />
                     <Button
-                        BackgroundColor="{StaticResource TwitterColor}"
-                        TextColor="White"
-                        BorderRadius="6"
-                        Text="Registrar"
-                        HeightRequest="46"
                         Margin="0,0,0,2"
-                        Command="{Binding RegisterMail}"/>
+                        BackgroundColor="{StaticResource TwitterColor}"
+                        BorderRadius="6"
+                        Command="{Binding RegisterMail}"
+                        HeightRequest="46"
+                        Text="Registrar"
+                        TextColor="White" />
                 </StackLayout>
                 <StackLayout
                     Margin="15,20,15,0"
+                    HorizontalOptions="CenterAndExpand"
                     Orientation="Horizontal"
-                    HorizontalOptions="CenterAndExpand"
                     VerticalOptions="EndAndExpand">
-                    <Label 
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Entrar implica que has leido y aceptado los Términos y condiciones y Políticas de privacidad"
-                    VerticalOptions="Center"
-                    HorizontalTextAlignment="Center"
-                    TextColor="White"
-                        FontSize="11"/>
+                    <Label
+                        FontSize="11"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="Entrar implica que has leido y aceptado los Términos y condiciones y Políticas de privacidad"
+                        TextColor="White"
+                        VerticalOptions="Center" />
                 </StackLayout>
             </StackLayout>
         </ScrollView>

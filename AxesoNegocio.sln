@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxesoNegocio.Android", "Axe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxesoNegocio.iOS", "AxesoNegocio\AxesoNegocio.iOS\AxesoNegocio.iOS.csproj", "{A91B7374-A881-479F-89B8-CAC2315C0BB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxesoNegocio", "AxesoNegocio\AxesoNegocio\AxesoNegocio.csproj", "{846DE5F3-57C8-4EAA-85AC-54541FF02708}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AxesoNegocio", "AxesoNegocio\AxesoNegocio\AxesoNegocio.csproj", "{846DE5F3-57C8-4EAA-85AC-54541FF02708}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axeso_BE", "Axeso_BE\Axeso_BE.csproj", "{03C001EC-C497-4090-89C6-C1068F89DB7F}"
 EndProject
