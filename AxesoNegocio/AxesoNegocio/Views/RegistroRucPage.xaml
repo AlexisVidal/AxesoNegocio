@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AxesoNegocio.Views.RegistroRucPage"
+             BackgroundColor="{StaticResource AxesoBackgroundColor}"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:controls="clr-namespace:AxesoNegocio.Controls;assembly=AxesoNegocio">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="controls:StandardEntry">
+                <Setter Property="Padding" Value="13" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="BorderColor" Value="#BEBEBE" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource FontColor}" />
+                <Setter Property="Margin" Value="50,0,50,0" />
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="StartAndExpand">
+            <StackLayout
+                    Margin="0,10,0,0"
+                    BackgroundColor="Transparent"
+                    HeightRequest="50"
+                    Orientation="Horizontal"
+                    Spacing="0">
+                <Image
+                    Margin="10,0,0,0"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    Source="backwhite"
+                    BackgroundColor="Transparent"
+                    WidthRequest="25">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BackButton" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label
+                    Margin="-15,0,0,0"
+                    FontFamily="{StaticResource PingFangMedium}"
+                    FontSize="16"
+                    TextColor="White"
+                    HorizontalOptions="CenterAndExpand"
+                    LineBreakMode="TailTruncation"
+                    Text="Registro"
+                    VerticalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center"></Label>
+            </StackLayout>
+            <ScrollView
+            VerticalOptions="StartAndExpand">
+                <StackLayout
+            Padding="5,15,5,0">
+                    <Image Source="logowhite"
+                   Aspect="AspectFit"
+                   WidthRequest="230"/>
+                    <controls:StandardEntry 
+                        Text="{Binding RucRegistro, Mode=TwoWay}" 
+                        Placeholder="Ruc" 
+                        Keyboard="Numeric"
+                        MaxLength="11"
+                        Unfocused="RucEntry_Unfocused"
+                        TextChanged="NumericEntry_TextChanged"/>
+                    <controls:StandardEntry 
+                        Text="{Binding RazonRegistro, Mode=TwoWay}" 
+                        Placeholder="Razon Social" 
+                        Keyboard="Text"/>
+                    <controls:StandardEntry 
+                        Text="{Binding DireccionRegistro, Mode=TwoWay}" 
+                        Placeholder="Direccion fiscal" 
+                        Keyboard="Text"/>
+                    <StackLayout
+                        Margin="50,20,50,0"
+                        Orientation="Vertical">
+                        <Button
+                            x:Name="NextRegistro"
+                            BackgroundColor="{StaticResource TwitterColor}"
+                            TextColor="White"
+                            BorderRadius="6"
+                            Text="Siguiente"
+                            HeightRequest="46"
+                            Margin="0,0,0,2"
+                            Command="{Binding NextRegistro}"/>
+                    </StackLayout>
+
+                    <StackLayout
+                        Margin="25,10,25,0"
+                        Orientation="Horizontal"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="EndAndExpand">
+                        <Label 
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Registrarse implica que has leido y aceptado los Términos y condiciones y Políticas de privacidad"
+                            VerticalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            TextColor="White"
+                            FontSize="12"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -8,10 +8,10 @@ namespace AxesoNegocio.Controls
     public sealed class StandardEntry : Entry
     {
         public static BindableProperty CornerRadiusProperty =
-            BindableProperty.Create(nameof(CornerRadius), typeof(int), typeof(StandardEntry), 0);
+            BindableProperty.Create(nameof(CornerRadius), typeof(int), typeof(StandardEntry), 8);
 
         public static BindableProperty BorderThicknessProperty =
-            BindableProperty.Create(nameof(BorderThickness), typeof(int), typeof(StandardEntry), 0);
+            BindableProperty.Create(nameof(BorderThickness), typeof(int), typeof(StandardEntry),1);
 
         public static BindableProperty PaddingProperty =
             BindableProperty.Create(nameof(Padding), typeof(Thickness), typeof(StandardEntry), new Thickness(5));

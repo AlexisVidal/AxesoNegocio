@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -89,7 +90,31 @@ namespace AxesoNegocio.Helpers
                 return entidadfound;
             }
         }
+        public EncryptedTokenModel EncriptaClave(string token)
+        {
+            string claveencrip = "";
+            EncryptedTokenModel newencrypt = new EncryptedTokenModel();
+            try
+            {
+                SHA1 sha1 = new SHA1CryptoServiceProvider();
+                byte[] inputBytes = (new System.Text.UnicodeEncoding()).GetBytes(token);
+                byte[] hash = sha1.ComputeHash(inputBytes);
 
+                claveencrip = Convert.ToBase64String(hash);
+                newencrypt = new EncryptedTokenModel()
+                {
+                    TokenEncrypted = claveencrip
+                };
+            }
+            catch (Exception)
+            {
+                newencrypt = new EncryptedTokenModel()
+                {
+                    TokenEncrypted = ""
+                };
+            }
+            return newencrypt;
+        }
         #endregion
     }
 }
