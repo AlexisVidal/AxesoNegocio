@@ -11,6 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CustomEntry.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Renderers\BorderlessEditor.cs~RF1ef3d4.TMP" />
   </ItemGroup>
 

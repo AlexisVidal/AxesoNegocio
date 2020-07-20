@@ -16,7 +16,7 @@ namespace AxesoNegocio.Helpers
     {
         #region Nodejs
         //string urlnodejs = "http://190.117.184.215:5300";
-        string urlnodejs = "http://localhost:5300";
+        string urlnodejs = "http://192.168.1.88:5300";
 
 
         public async Task<Usuarios> ValidaLogueo(Usuarios usuario)

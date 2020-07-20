@@ -1,7 +1,8 @@
 exports.dbConfig = {
     user: "dba",
     password: "@x3$0!2020",
-    server: "190.117.184.215",
+    //server: "190.117.184.215",
+    server: "192.168.1.100",
     database: "DBAxeso_OLTP",
     instance: "SQLAXESO",
     port: 1436,
