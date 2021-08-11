@@ -1,7 +1,7 @@
 Configuracion envio email:
 ==========================
 email: noreply@farmaxeso.com
-clave: $ecret0
+clave: 
 host: premium92.web-hosting.com
 puerto: 587
 
@@ -10,26 +10,26 @@ Clave para generacion de APK: 4X3s0f4rm4
 
 Usuario
 email: alexis.vidal@outlook.com
-Clave: 221084
+Clave: 
 
 -------------------------- SQL SERVER --------------------------
 :::Instancia:::
 local   JARVIS_SERVER\SQLAXESO
-publica 190.117.184.215,1436\SQLAXESO
+publica ,1436\SQLAXESO
 UID		dba
-PWD		@x3$0!2020
+PWD		
 
 :::Cuenta de servicio:::
 UID		JARVIS_SERVER\SQLServcesUser
 PWD		@xeso2020
 ----------------------------------------------------------------
 :: SQL Server ::
-Servidor        190.117.137.98
+Servidor        
                 JARVIS_SERVER
 Usuario         sa
 contraseña      Al22xis84
 
-Servidor        190.117.137.98\SQL_2017
+Servidor        \SQL_2017
                 JARVIS_SERVER\SQL_2017
 Usuario         sa
 contraseña      ServerVidal2020**
@@ -54,7 +54,7 @@ http://localhost:64035/ui/playground
 
 
 alexis.vidal@outlook.com
-221084
+
 
 mutation($usuario: usuarioInput!) {
   createUsuario(usuario: $usuario) {
@@ -128,7 +128,7 @@ Playground:  http://localhost/AxesoGraphQL/ui/playground
 
 sistemas.farmaxeso@gmail.com
 Al22xis84
-google api AIzaSyAJ2Y_hbwcXftOfQbnUD_8ZNjpzwMQ3Dgs
+google api AIzaSyAJ2Y_hbwcXftOfQbnUD_8ZNjpzwMQ3
 
 
 columna 1 #34cc67
@@ -184,7 +184,7 @@ google login https://www.youtube.com/watch?v=ZCPENg5wP8o   https://docs.microsof
 facebook login
 keytool -exportcert -alias "C:\Users\Administrador\AppData\Local\Xamarin\Mono for Android\debug.keystore" -keystore "C:\Users\Administrador\AppData\Local\Xamarin\Mono for Android\debug.keystore" | "C:\openssl\bin\openssl.exe" sha1 -binary | "C:\openssl\bin\openssl.exe" base64
 Identificador de la app --> 540380996583528
-Clave secreta de la app --> a996176dcd1653782b85df0961f0c07f
+Clave secreta de la app --> 
 Nombre para mostrar  --> AxesoUI
 sha key --> 2B+USOMMFEJhSZst9VDKGfckfgQ=
 
@@ -204,4 +204,4 @@ azure
 
 server xamarindatos.database.windows.net
 usuario axesousuario
-clave Ax3s0S3rv3r
+clave 
